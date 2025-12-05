@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidden Snake</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Écran d'accueil avec activation secrète -->
+    <div id="startScreen" class="screen active">
+        <div class="logo-container">
+            <div class="logo" id="logo">🐍</div>
+            <p class="hint">Trouvez le secret...</p>
+            <div class="secret-input-container">
+                <input type="text" id="secretInput" class="secret-input" placeholder="..." autocomplete="off" spellcheck="false">
+            </div>
+        </div>
+        <div class="particles-bg" id="particlesBg"></div>
+    </div>
+
+    <!-- Écran de jeu -->
+    <div id="gameScreen" class="screen">
+        <canvas id="gameCanvas"></canvas>
+        
+        <!-- UI du jeu -->
+        <div class="game-ui">
+            <div class="score-panel">
+                <div class="score-item">
+                    <span class="label">Score</span>
+                    <span class="value" id="score">0</span>
+                </div>
+                <div class="score-item">
+                    <span class="label">Niveau</span>
+                    <span class="value" id="level">1</span>
+                </div>
+                <div class="score-item">
+                    <span class="label">Taille</span>
+                    <span class="value" id="size">3</span>
+                </div>
+            </div>
+            
+            <div class="ai-companion" id="aiCompanion">
+                <div class="companion-avatar">🤖</div>
+                <div class="companion-message" id="companionMessage">Salut ! Je suis ton compagnon IA.</div>
+            </div>
+        </div>
+
+        <!-- Mini-puzzle overlay -->
+        <div id="puzzleOverlay" class="puzzle-overlay hidden">
+            <div class="puzzle-container">
+                <h3 id="puzzleTitle">Mini-Puzzle</h3>
+                <div id="puzzleContent"></div>
+                <button id="puzzleClose" class="puzzle-btn">Fermer</button>
+            </div>
+        </div>
+
+        <!-- Menu pause -->
+        <div id="pauseMenu" class="pause-menu hidden">
+            <h2>Pause</h2>
+            <button id="resumeBtn" class="menu-btn">Reprendre</button>
+            <button id="restartBtn" class="menu-btn">Recommencer</button>
+            <button id="quitBtn" class="menu-btn">Quitter</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
+
